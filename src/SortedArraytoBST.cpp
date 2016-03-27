@@ -32,7 +32,6 @@ struct node{
 	int data;
 	struct node *right;
 };
-
 struct node * convert_array_to_bst(int *arr, int len)
 {
 	return 0;
