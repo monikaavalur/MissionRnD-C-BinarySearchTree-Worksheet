@@ -78,7 +78,7 @@ namespace spec
 			int ans[6];
 			inorder(NULL, NULL);
 			preorder(NULL, NULL);
-			postorder(NULL, NULL);;
+			postorder(NULL, NULL);
 			postorder(root, NULL);
 			inorder(root, NULL);
 			preorder(root, NULL);

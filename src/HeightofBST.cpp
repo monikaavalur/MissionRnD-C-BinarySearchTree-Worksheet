@@ -25,7 +25,7 @@ Ex : get_sum_left for 10 in above Tree ,returns 11
 get_sum_left for 80 returns 0
 Return -1 for invalid inputs
 
-3) Get Sum of Left subtree gets the sum of all nodes ,in the left subtree of the given node
+3) Get Sum of right subtree gets the sum of all nodes ,in the left subtree of the given node
 Ex : get_sum_left for 10 in above Tree ,returns 130
 get_sum_left for 80 returns 0
 Return -1 for invalid inputs
@@ -41,13 +41,26 @@ struct node{
 };
 
 
-int get_height(struct node *root){
-
-	return 0;
+int get_height(struct node *root)
+{
+	if (root == NULL)
+		return 0;
+	int heightl = get_height(root->left);
+	int heightr = get_height(root->right);
+	if (heightl > heightr)
+		return heightl + 1;
+	else
+		return heightr + 1;
 }
 
-int get_left_subtree_sum(struct node *root){
-	return 0;
+int get_left_subtree_sum(struct node *root)
+{
+	if (root == NULL)
+		return -1;
+	int sum = 0;
+	get_left_subtree_sum(root->left);
+	sum += root->left->data;
+
 }
 
 int get_right_subtree_sum(struct node *root){
