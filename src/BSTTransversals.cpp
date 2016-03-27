@@ -23,13 +23,37 @@ struct node{
 };
 
 
-void inorder(struct node *root, int *arr){
-	
+void inorder(struct node *root, int *arr)
+{
+	int index = 0;
+	if (root != NULL || arr != NULL)
+	{
+		inorder(root->left,arr);
+		arr[index] = root->data;
+		index++;
+		inorder(root->right,arr);
+	}
 }
-void preorder(struct node *root, int *arr){
-	
+void preorder(struct node *root, int *arr)
+{
+	int index1 = 0;
+	if (root != NULL || arr != NULL)
+	{
+		arr[index1] = root->data;
+		index1++;
+		preorder(root->left,arr);
+		preorder(root->right,arr);
+	}
 }
-void postorder(struct node *root, int *arr){
-	
+void postorder(struct node *root, int *arr)
+{
+	int index2 = 0;
+	if (root != NULL || arr != NULL)
+	{
+		postorder(root->left, arr);
+		postorder(root->right, arr);
+		arr[index2] = root->data;
+		index2++;
+	}
 }
 
